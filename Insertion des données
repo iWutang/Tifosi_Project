@@ -1,0 +1,46 @@
+-- Clients
+INSERT INTO client (nom_client, age, cp_client) VALUES
+('Alice Martin', 28, 75001),
+('Jean Dupont', 35, 69000);
+
+-- Ingrédients
+INSERT INTO ingredient (nom_ingredient) VALUES
+('Mozzarella'), ('Jambon'), ('Tomate'), ('Roquette'), ('Poulet'), ('Curry'), ('Thon'), ('Oignon');
+
+-- Focaccias
+INSERT INTO focaccia (nom_focaccia, prix_focaccia) VALUES
+('Focaccia Classique', 6.50),
+('Focaccia Jambon Fromage', 7.20);
+
+-- Marques
+INSERT INTO marque (nom_marque) VALUES
+('Coca-Cola'), ('Pepsi'), ('Evian');
+
+-- Boissons
+INSERT INTO boisson (nom_boisson, id_marque) VALUES
+('Coca-Cola Classic', 1),
+('Pepsi Max', 2),
+('Evian 50cl', 3);
+
+-- Menus
+INSERT INTO menu (nom_menu, prix_menu, id_focaccia) VALUES
+('Menu Classique', 10.50, 1),
+('Menu Jambon', 11.00, 2);
+
+-- Relations comprend
+INSERT INTO comprend (id_focaccia, id_ingredient) VALUES
+(1, 1), (1, 3), (2, 2), (2, 1);
+
+-- Relations contient
+INSERT INTO contient (id_menu, id_boisson) VALUES
+(1, 1), (1, 3), (2, 2);
+
+-- Achats de focaccias
+INSERT INTO achete (id_client, id_focaccia, jour) VALUES
+(1, 1, '2024-06-15'),
+(2, 2, '2024-06-16');
+
+-- Paiement de menus
+INSERT INTO paye (id_client, id_menu, jour) VALUES
+(1, 1, '2024-06-15'),
+(2, 2, '2024-06-16');
